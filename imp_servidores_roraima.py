@@ -35,6 +35,7 @@ for num_pag in tqdm(nmr_page, desc="Processando páginas", leave=False):
             try:
                 pag = json.loads(req.text)
                 elemento = pag["data"]["content"][i]
+                contador = 0
             except IndexError: # Se não houver mais elementos na página, saia do loop
                 break  
             except json.JSONDecodeError as e:
